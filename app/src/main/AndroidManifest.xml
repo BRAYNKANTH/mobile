@@ -11,7 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sl_life_bloodline_app">
-
+        <activity
+            android:name=".activities.auth.ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.auth.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.auth.LoginActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.auth.WelcomeActivity"
             android:exported="true">
