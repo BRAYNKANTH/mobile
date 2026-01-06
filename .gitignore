@@ -1,5 +1,7 @@
 *.iml
 .gradle
+echo "/.idea/" >> .gitignore
+
 /local.properties
 /.idea/caches
 /.idea/libraries
