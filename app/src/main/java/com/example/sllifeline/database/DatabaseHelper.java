@@ -132,4 +132,58 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 new String[]{email, password}
         );
     }
+
+    public boolean verifyIdentity(String email, String identity) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor userCursor = db.rawQuery(
+                "SELECT id, role FROM users WHERE email = ?",
+                new String[]{email}
+        );
+
+        if (!userCursor.moveToFirst()) {
+            userCursor.close();
+            return false;
+        }
+
+        int userId = userCursor.getInt(0);
+        String role = userCursor.getString(1);
+        userCursor.close();
+
+        Cursor identityCursor;
+
+        if (role.equals("DONOR")) {
+            identityCursor = db.rawQuery(
+                    "SELECT id FROM donor WHERE user_id = ? AND nic = ?",
+                    new String[]{String.valueOf(userId), identity}
+            );
+        } else {
+            identityCursor = db.rawQuery(
+                    "SELECT id FROM hospital WHERE user_id = ? AND registration_no = ?",
+                    new String[]{String.valueOf(userId), identity}
+            );
+        }
+
+        boolean verified = identityCursor.moveToFirst();
+        identityCursor.close();
+        return verified;
+    }
+
+    public boolean updatePassword(String email, String newPassword) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues cv = new ContentValues();
+        cv.put("password", newPassword);
+
+        int rows = db.update(
+                "users",
+                cv,
+                "email = ?",
+                new String[]{email}
+        );
+
+        return rows > 0;
+    }
+
+
 }
