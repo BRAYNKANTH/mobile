@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+android:layout_width="match_parent" 
+android:layout_height="match_parent"> 
+<LinearLayout 
+android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+        android:orientation="vertical" 
+        android:padding="24dp"> 
+ 
+        <TextView 
+            android:text="Hospital Registration" 
+            android:textSize="22sp" 
+            android:textStyle="bold" 
+            android:layout_marginBottom="16dp" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" /> 
+ 
+        <EditText 
+            android:id="@+id/etHospitalName" 
+            android:hint="Hospital Name" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" /> 
+ 
+        <EditText 
+            android:id="@+id/etRegNo" 
+            android:hint="Registration Number" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" /> 
+ 
+        <EditText 
+            android:id="@+id/etPhone" 
+            android:hint="Phone" 
+            android:inputType="phone" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" /> 
+ 
+        <EditText 
+            android:id="@+id/etAddress" 
+            android:hint="Address" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" /> 
+ 
+        <EditText 
+            android:id="@+id/etCity" 
+            android:hint="City" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" /> 
+ 
+        <EditText 
+            android:id="@+id/etDistrict" 
+            android:hint="District" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" /> 
+ 
+        <Button 
+            android:id="@+id/btnRegisterHospital" 
+            android:text="Register Hospital" 
+android:layout_width="match_parent" 
+android:layout_height="wrap_content" 
+android:layout_marginTop="16dp" /> 
+</LinearLayout> 
+</ScrollView>
