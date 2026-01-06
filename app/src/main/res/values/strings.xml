@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">sl_life_bloodline_app</string>
+    <string name="emergency_blood_request">Emergency Blood Request</string>
+    <string name="blood_group_e_g_o">Blood Group (e.g. O+)</string>
+    <string name="radius_in_km">Radius in KM</string>
+    <string name="send_emergency_request">Send Emergency Request</string>
+    <string name="nearby_donors_will_be_shown_here">Nearby donors will be shown here</string>
 </resources>
