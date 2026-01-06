@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,6 +13,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sl_life_bloodline_app">
+
+        <!-- Emergency Blood Request Activities -->
+        <activity
+            android:name=".activities.emergency.CreateBloodRequestActivity"
+            android:exported="false"
+            android:label="Emergency Blood Request" />
+
+        <activity
+            android:name=".activities.emergency.NearbyDonorsActivity"
+            android:exported="false"
+            android:label="Nearby Donors" />
+
+        <activity
+            android:name=".activities.emergency.RequestHistoryActivity"
+            android:exported="false"
+            android:label="Request History" />
+
         <activity
             android:name=".activities.donor.DonorHomeActivity"
             android:exported="false" />
@@ -38,5 +57,3 @@
     </application>
 
 </manifest>
-
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />

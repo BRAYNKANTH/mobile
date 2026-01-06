@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sllifeline.R;
+import com.example.sllifeline.activities.donor.DonorRegistrationActivity;
 import com.example.sllifeline.database.DatabaseHelper;
 import com.example.sllifeline.utils.SessionManager;
 

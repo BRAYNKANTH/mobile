@@ -7,6 +7,7 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sllifeline.R;
+import com.example.sllifeline.activities.donor.DonorRegistrationActivity;
 import com.example.sllifeline.database.DatabaseHelper;
 
 public class SignupActivity extends AppCompatActivity {
@@ -54,7 +55,8 @@ public class SignupActivity extends AppCompatActivity {
                 if (role.equals("DONOR")) {
                     startActivity(new Intent(this, DonorRegistrationActivity.class));
                 } else {
-                    startActivity(new Intent(this, HospitalRegistrationActivity.class));
+                    // Redirecting to DonorRegistrationActivity temporarily as HospitalRegistrationActivity does not exist yet
+                    startActivity(new Intent(this, DonorRegistrationActivity.class));
                 }
                 finish();
             } else {

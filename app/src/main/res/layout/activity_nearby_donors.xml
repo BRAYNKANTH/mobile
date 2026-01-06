@@ -1,13 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@android:drawable/ic_menu_mylocation"
+        android:tint="#999999"
+        android:layout_marginBottom="16dp" />
 
     <TextView
-        android:text="@string/nearby_donors_will_be_shown_here"
-        android:textSize="18sp"
-        android:layout_width=""
-        android:layout_height="" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nearby Donors"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Feature coming soon..."
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Donors matching your request will be displayed here"
+        android:textSize="12sp"
+        android:textColor="#999999"
+        android:gravity="center"
+        android:layout_marginTop="8dp" />
 
 </LinearLayout>

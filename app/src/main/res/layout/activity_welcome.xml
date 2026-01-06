@@ -5,6 +5,33 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     tools:context="com.example.sllifeline.activities.auth.WelcomeActivity">
+
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SL-LifeLine"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="#D32F2F"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnTestEmergency"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnTestEmergency"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:text="TEST EMERGENCY REQUEST"
+        android:backgroundTint="#D32F2F"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

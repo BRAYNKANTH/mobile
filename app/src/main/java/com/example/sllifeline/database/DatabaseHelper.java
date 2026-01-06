@@ -185,5 +185,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return rows > 0;
     }
 
+    public boolean insertBloodRequest(int hospitalId, String bloodGroup,
+                                      int radius, double latitude, double longitude) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_REQUEST_HOSPITAL_ID, hospitalId);
+        values.put(COL_REQUEST_BLOOD_GROUP, bloodGroup);
+        values.put(COL_RADIUS, radius);
+        values.put(COL_LATITUDE, latitude);
+        values.put(COL_LONGITUDE, longitude);
+        values.put(COL_CREATED_AT, String.valueOf(System.currentTimeMillis()));
+
+        long result = db.insert(TABLE_BLOOD_REQUEST, null, values);
+        db.close();
+        return result != -1;
+    }
+
+    public boolean insertDonor(int userId, String name, String nic, int age, String bloodGroup,
+                               String phone, String address, String city, String district) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COL_DONOR_USER_ID, userId);
+        cv.put(COL_NAME, name);
+        cv.put(COL_NIC, nic);
+        cv.put(COL_AGE, age);
+        cv.put(COL_BLOOD_GROUP, bloodGroup);
+        cv.put(COL_PHONE, phone);
+        cv.put(COL_ADDRESS, address);
+        cv.put(COL_CITY, city);
+        cv.put(COL_DISTRICT, district);
+
+        long result = db.insert(TABLE_DONOR, null, cv);
+        db.close();
+        return result != -1;
+    }
+
 
 }
