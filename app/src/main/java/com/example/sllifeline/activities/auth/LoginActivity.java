@@ -10,9 +10,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sllifeline.R;
-import com.example.sllifeline.activities.donor.DonorRegistrationActivity;
-import com.example.sllifeline.activities.hospital.HospitalRegistrationActivity;
 import com.example.sllifeline.database.DatabaseHelper;
+import com.example.sllifeline.utils.SessionManager;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -43,17 +42,20 @@ public class LoginActivity extends AppCompatActivity {
             Cursor cursor = db.loginUser(email, password);
 
             if (cursor.moveToFirst()) {
+                int userId = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
                 String role = cursor.getString(cursor.getColumnIndexOrThrow("role"));
 
-                if (role.equals("DONOR")) {
-                    startActivity(new Intent(this, DonorRegistrationActivity.class));
-                } else {
-                    startActivity(new Intent(this, HospitalRegistrationActivity.class));
-                }
+                // Save session
+                SessionManager session = new SessionManager(this);
+                session.createSession(userId, role);
+
+                // Redirect all users to DonorRegistrationActivity for now
+                startActivity(new Intent(this, DonorRegistrationActivity.class));
                 finish();
             } else {
                 Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show();
             }
+
             cursor.close();
         });
     }
