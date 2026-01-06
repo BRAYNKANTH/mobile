@@ -7,7 +7,6 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sllifeline.R;
-import com.example.sllifeline.activities.donor.DonorRegistrationActivity;
 import com.example.sllifeline.activities.hospital.HospitalRegistrationActivity;
 import com.example.sllifeline.database.DatabaseHelper;
 

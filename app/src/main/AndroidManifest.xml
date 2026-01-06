@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sl_life_bloodline_app">
         <activity
+            android:name=".activities.donor.DonorHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.donor.DonorRegistrationActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.auth.ResetPasswordActivity"
             android:exported="false" />
         <activity
